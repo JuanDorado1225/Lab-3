@@ -1,0 +1,93 @@
+# Wildlife Detection - Fauna Classification Pipeline
+
+## Resumen
+
+El objetivo de este proyecto es desarrollar un pipeline automatizado para la **detección de fauna silvestre** utilizando imágenes capturadas por cámaras trampa en corredores biológicos. Este pipeline usa técnicas de **procesamiento de imágenes** y **aprendizaje automático** para identificar y clasificar diferentes especies.
+
+El pipeline está compuesto por varios pasos que incluyen la preparación de datos (preprocesamiento de imágenes), extracción de características visuales (textura, bordes, frecuencia), análisis estadístico y, finalmente, clasificación utilizando modelos de Machine Learning.
+
+## Metodología
+
+1. **Preprocesamiento de Imágenes**:
+   - Las imágenes son limpiadas eliminando aquellas que están corruptas o que tienen tamaños pequeños.
+   - Se recorta el 10% inferior de cada imagen para eliminar posibles elementos de fondo irrelevantes.
+   - Las imágenes se redimensionan a un tamaño estándar de 256x256 píxeles para garantizar consistencia.
+   - Las imágenes son convertidas a escala de grises para reducir la complejidad computacional.
+   - Se aplica un proceso de mejora de contraste utilizando Histogram Equalization, CLAHE y Normalización.
+
+2. **Extracción de Características**:
+   - Se extraen características espaciales como la intensidad media, el contraste, la entropía y la densidad de bordes.
+   - Se aplica **Transformada Rápida de Fourier (FFT)** para extraer características del dominio de la frecuencia.
+   - Se calculan características de textura utilizando **Local Binary Patterns (LBP)**.
+
+3. **Análisis de Datos y Clasificación**:
+   - Se realiza un análisis estadístico descriptivo para entender las características extraídas.
+   - Se analiza la correlación entre las características utilizando una matriz de correlación.
+   - Se reduce la dimensionalidad utilizando **Análisis de Componentes Principales (PCA)** para facilitar la visualización y mejorar la clasificación.
+   - Se entrenan modelos de clasificación multiclase utilizando **Random Forest**, **SVM** y **Logistic Regression**.
+   - Se evalúan los modelos utilizando **matrices de confusión**, **curvas ROC**, **curvas Precision-Recall** y **métricas como F1-score, precisión y recall**.
+
+## Resultados
+
+Los resultados se almacenan en la carpeta **Results/**. Esto incluye:
+
+- Gráficas de comparación entre modelos.
+- Curvas ROC y Precision-Recall para cada modelo.
+- Resultados de las pruebas estadísticas realizadas.
+- Modelos entrenados y sus métricas de rendimiento.
+
+## Conclusiones
+
+Este proyecto proporciona un pipeline robusto y modular para la detección de fauna silvestre utilizando imágenes. Los modelos entrenados pueden ser utilizados para predecir la presencia de diferentes especies en áreas específicas, lo que puede ser útil para la **planificación de conservación** y la **reducción de accidentes de tráfico**.
+
+---
+
+### **Este archivo debe ir en `docs/index.md`**
+
+---
+
+# 🟦 **C) Documentos en `docs/`**
+
+Aquí va un resumen de los otros documentos que **debes incluir en la carpeta `docs/`** para completar la documentación del proyecto.
+
+### **`docs/pipeline.md`**
+
+Explica detalladamente cada paso del pipeline, cómo se implementa en el código, y qué realiza cada módulo (cleaning, cropping, resize, etc.). Aquí puedes agregar los diagramas del flujo del pipeline.
+
+---
+
+### **`docs/features.md`**
+
+Un documento detallando las características extraídas en el proyecto, qué significa cada una y cómo se calcula. Incluye las características **spatial**, **FFT** y **LBP**.
+
+---
+
+### **`docs/results.md`**
+
+Este documento debe contener los resultados principales obtenidos en el proyecto:
+
+- Principales conclusiones de los modelos de clasificación.
+- Comparación de rendimiento entre modelos.
+- Visualización de las matrices de confusión y las curvas ROC.
+
+---
+
+# 🟦 **D) Notebook Final Report (`Final_Report.ipynb`)**
+
+Finalmente, el **notebook** debe ser un reporte completo de tu proyecto, con celdas de código y explicaciones.
+
+### **`Final_Report.ipynb`** contiene:
+
+1. **Introducción** y descripción del dataset.
+2. **Preprocesamiento de imágenes** (con celdas mostrando imágenes antes y después de cada transformación).
+3. **Extracción de características** (mostrar histogramas, tablas, y gráficas).
+4. **Análisis estadístico** (estadísticas descriptivas y análisis de correlación).
+5. **PCA** (visualización 2D y 3D).
+6. **Clasificación** (métricas, matrices de confusión, y curvas ROC).
+7. **Conclusiones**.
+
+---
+
+# 🟦 **¿Te gustaría que te genere estos documentos y notebooks ahora?**
+
+Puedo generarlos todo para ti, **listos para entregar**. Solo dime si quieres que empiece con el **README**, **docs/** o **notebooks/**.
